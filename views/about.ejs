@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+     <!-- Responsive Navbar -->
+     <%- include('partials/navbar', {page: '/about'}) %>
+
+    <div class="container mx-auto">
+
+        <div class="hero h-50 bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">About</h1>
+                    <p class="py-6">About me</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <!-- Image -->
+            <div>
+              <img class="rounded-lg block mx-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpf7P5TtRLaI8oPnrSIsmwZSo7rZY-jlooQQ&usqp=CAU" width="500" height="500" alt="">
+            </div>
+
+            <!-- short blurb -->
+            <div class="text-left">
+                <h2 class="text-xl font-bold mb-2">About Me</h2>
+                <p>
+                    Hey! my name is Xiuhui Liang.<br>                
+                    I am currently learning Tailwind CSS. <br>
+                    Tailwind CSS streams web development by providing a utility first framework,
+                    enabling effective styling with decision classes Tailwind CSS improves code  <br>
+                    readability.<br> 
+                    <br>  I will add multiple pages,including a login page with a LEGO toy link, 
+                    which will also be applied to the relevant Tailwind CSS.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

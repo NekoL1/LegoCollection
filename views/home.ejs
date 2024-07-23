@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Lego Collection</title>
+</head>
+<body>
+
+    <!-- Responsive Navbar -->
+    <%- include('partials/navbar') %>
+
+
+   <!-- Content -->
+   <div class="container mx-auto">
+
+         <!-- Hero -->
+        <div class="hero bg-base-200 p-6">
+                <div class="hero text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Explore the Lego Collection</h1>
+                        <p class="py-6">featuring one of the items from your lego set </p>
+                        <a href="/lego/sets"><button class="btn btn-primary">Get Started</button></a>
+                    </div>
+                </div> 
+        </div>
+
+        <!-- Card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">  
+            <!-- Card 1    -->
+            <div>
+                <div class="card w-100 w-full bg-base-100 shadow-xl">
+                    <figure class="px-20 pt-15">
+                        <img src="https://cdn.rebrickable.com/media/sets/033-1.jpg" alt="lego set" class="w-full h-32 object-cover mb-4">   
+                    </figure>
+                    
+                   <div class="card-body items-center text-center">
+                       <h2 class="cardTitle">Farm Animals</h2>
+                       <p class="cardInfo">
+                           Re-released in 1982 as set 2641-1. No known differences exist between the two versions.
+                       </p>
+                       <div class="card-actions justify-center">
+                           <a href="/lego/sets/033-1" class="btn btn-primary"> Show </a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+
+            
+            <!-- Card 2    -->
+            <div>
+                <div class="card w-100 w-full bg-base-100 shadow-xl">
+                    <figure class="px-20 pt-15">
+                        <img src="https://cdn.rebrickable.com/media/sets/03093-1.jpg" alt="lego set" class="w-full h-32 object-cover mb-4">   
+                    </figure>
+                    
+                    <div class="card-body items-center text-center">
+                       <h2 class="cardTitle">The Race to Build It Board Game</h2>
+                       <p class="cardInfo">
+                            Note: the levers with small base have yellow levers, not black as indicated in the picture.
+                       </p>
+                       <div class="card-actions justify-center">
+                           <a href="/lego/sets/03093-1" class="btn btn-primary"> Show </a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+
+
+            <!-- Card 3    -->
+            <div>
+                <div class="card w-100 w-full bg-base-100 shadow-xl">
+                    <figure class="px-20 pt-15">
+                        <img src="https://cdn.rebrickable.com/media/sets/003-1.jpg" alt="lego set" class="w-full h-32 object-cover mb-4">   
+                    </figure>
+                    
+                    <div class="card-body items-center text-center">
+                       <h2 class="cardTitle">TMaster Mechanic Set</h2>
+                       <p class="cardInfo">
+                            Note: the levers with small base have yellow levers, not black as indicated in the picture.
+                       </p>
+                       <div class="card-actions justify-center">
+                           <a href="/lego/sets/003-1" class="btn btn-primary"> Show </a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

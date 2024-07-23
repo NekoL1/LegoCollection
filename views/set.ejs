@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+     <!-- Responsive Navbar -->
+     <%- include('partials/navbar', {page: '/'}) %>
+
+    <div class="container mx-auto p-5">
+
+        <div class="hero h-50 bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl front-bold"><% set.name %></h1>
+                    <p class="py-4">Below, you will find detailed information about the set: <%= set.set_num %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <figure>
+                <div>
+                <img src="<%= set.img_url%>" alt="<%= set.name%>" class="setImage rounded center" >
+                 </div>
+            </figure>
+            <div class="card-body text-center">
+                <h2><%= set.name%></h2>
+                <p><span class="font-bold">Year: </span> <%= set.year%></p>
+                <p><span class="font-bold">Theme: </span> <a href="/lego/sets?theme=<%= set.Theme.name %>" class="btn-link"><%= set.Theme.name%></a></p>
+                <p><span class="font-bold">Number of Parts: </span><%= set.num_parts%></p>
+            </div>
+            <!-- Quote section -->
+            <div class="text-center my-6" id="quote">
+                <p id="quote-content">Fetch a random quote: </p>
+                <p class="quote-author" id="quote-author"></p>
+            </div>
+            
+
+            <!-- "back" or "return" button -->
+            <div class="card-actions justify-center">
+                <a href="#" onclick="history.back(); return false;" class="btn btn-primary">return</a>
+                <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success">Edit</a>
+            </div>
+        </div>
+    </div>
+
+  <!-- JavaScript to fetch a random quote -->
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+        fetch("https://quotable.io/random")
+            .then(response => response.json())
+            .then(data =>{
+                const getContent = data.content;
+                const getAuthor = data.author;
+                document.getElementById("quote-content").textContent = getContent;
+                document.getElementById("quote-author").textContent = `— ${getAuthor}`
+            })
+            .catch(err => {
+                console.err("Faild to fetch:", err);
+            })
+        
+    });
+  </script>
+
+</body>
+
+</html>

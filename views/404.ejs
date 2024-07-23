@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found (404)</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+   <!-- Responsive Navbar -->
+   <%- include('partials/navbar', {page: ''}) %>
+
+
+  <div class="container mx-auto">
+
+    <div class="hero min-h-screen bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">404 - Page Not Found</h1>
+          <img src="https://img.pagecloud.com/jJcVTerA_5Wbq0TJOLfkxAc1txg=/1000x0/filters:no_upscale()/web/Screen_Shot_2022-08-16_at_1.45.13_PM-a6695.png" alt="Image" class="mx-auto" width="880" height="420">
+          <p class="py-6"><%= message %></p>
+          <a href="/" class="btn btn-secondary">Home</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

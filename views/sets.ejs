@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/main.css" />
+        <title>Lego Collection</title>
+    </head>
+<body>
+     <!-- Responsive Navbar -->
+     <%- include('partials/navbar',  {page:"/lego/sets"}) %>
+
+
+     <!-- Content -->
+     <div class="container mx-auto p-4">
+  
+           <!-- Hero -->
+          <div class="hero bg-base-200 rounded-lg p-6 ">
+                  <div class="hero-content text-center">
+                      <div class="max-w-md">
+                          <h1 class="text-5xl font-bold">Collection</h1>
+                          <div class="py-6">
+                            <!-- Hard-coded theme filter links -->
+                            <a href="/lego/sets?theme=Technic" class="btn btn-primary btn-xs">Technic</a>
+                            <a href="/lego/sets?theme=Classic Town" class="btn btn-primary btn-xs">Classic Town</a>
+                            <a href="/lego/sets?theme=Lion Knights" class="btn btn-primary btn-xs">Lion Knights</a>
+                            
+                            <!-- Add more links for other themes as needed -->
+                          </div>
+                      </div>
+                  </div> 
+          </div>
+
+        <div class="overflow-x-auto overflow-y-hidden">
+          <table class="table table-zebra">
+            <thead class="text-left">
+                <tr>
+                    <th class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">Image</th>
+                    <th class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">Name</th>
+                    <th class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">Theme</th>
+                    <th class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">Year</th>
+                    <th class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">Num Parts</th>
+                    <th class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">Details</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <% sets.forEach((set) =>{ %>
+                    <tr>
+                        <td><img src="<%= set.img_url %>" alt="<%= set.name%>" width="100" ></td>
+                        <td><%= set.name%></td>
+                        <td><a href="/logo/sets?theme=<%= set.Theme.name %>" class="btn btn-xs"><%= set.Theme.name %></a></td>
+                        <td><%= set.year%></td>
+                        <td><%= set.num_parts %></td>
+                        <td><a href="/lego/sets/<%= set.set_num %>" class="btn btn-primary btn-xs">Details</a></td>
+                    </tr>
+               <% }); %>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</body>
+</html>
